@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa de Agua Potable del Cantón Pedro Carbo</title>
+    <link rel="stylesheet" href="../static/css/estilos.css">
+</head>
+<body>
+    <img src="../static/imagenes/Logo.png" alt="Logo de la empresa" class="logo">
+    <h2>Empresa Municipal de Agua Potable y Alcantarillado del Canton Pedro Carbo</h2>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Gestion de tramites</a></li>
+                <li><a href="#">Actualizar datos</a></li>
+                <!-- más enlaces aquí -->
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="search" placeholder="Search ...">
+            <button type="submit">Buscar</button>
+        </div>
+    </header>
+    <main>
+        <div class="main-content">
+            <!-- Contenido principal aquí -->
+        </div>
+    </main>
+    
+    <script src="script.js">
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navigationLinks = document.querySelectorAll('#navigation a');
+
+    navigationLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            
+            // Ocultar todas las secciones
+            document.querySelectorAll('main section').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Mostrar la sección clicada
+            const sectionId = link.getAttribute('href');
+            document.querySelector(sectionId).style.display = 'block';
+        });
+    });
+});
+
+function logout() {
+    // Implementar lógica de cierre de sesión
+    console.log("Cerrar sesión");
+}
+
+    </script>
+        <footer>
+            <p>&copy; 2024 Empresa Municipal de Agua Potable y Alcantarillado.</p>
+        </footer>
+</body>
+</html>
