@@ -23,16 +23,15 @@ public class UserService {
         PasswordResetToken myToken = new PasswordResetToken();
         myToken.setUsuario(usuario);
         myToken.setToken(token);
-        myToken.setExpiryDate(); // Debes pasar el número de minutos/horas hasta la expiración
+        myToken.setExpiryDate();
 
         tokenRepository.save(myToken);
 
-        String url = constructResetTokenUrl(token); // Implementa este método para construir la URL
+        String url = constructResetTokenUrl(token);
         sendPasswordResetEmail(usuario.getCorreoElectronico(), url);
     }
 
     public String constructResetTokenUrl(String token) {
-        // Tienes que implementar la lógica para construir la URL completa con el token
         return "http://yourapp.com/reset-password?token=" + token;
     }
 
